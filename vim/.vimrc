@@ -34,6 +34,7 @@ let NERDTreeShowHidden = 1
 :set hlsearch
 :set incsearch
 :set ignorecase
+:set scrolloff=8 "Keep at least 8 lines visible at the bottom when !EOF
 :inoremap jk <esc>
 
 :syntax on
