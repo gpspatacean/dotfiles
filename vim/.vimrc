@@ -14,6 +14,8 @@ Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
 Plugin 'frazrepo/vim-rainbow'
 Plugin 'dracula/vim'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 
 let g:rainbow_active = 1
 au FileType c,cpp,cc,js,ts call rainbow#load()
