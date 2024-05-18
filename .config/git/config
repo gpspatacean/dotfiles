@@ -1,0 +1,14 @@
+[user]
+	name = George Spătăcean
+	email = george.spatacean@gmail.com
+	username = gpspatacean
+[log]
+	abbrevCommit = true
+[status]
+	short = true
+	branch = true
+	showStash = true
+[format]
+	pretty = oneline
+[alias]
+	lg = log --all --decorate --oneline --graph
