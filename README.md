@@ -5,5 +5,5 @@ Install plugin manager: ```git clone https://github.com/VundleVim/Vundle.vim.git
 Run ```:PluginInstall``` in vim
 
 ### Tmux
-Install plugin manager: ```git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm```
+Install plugin manager: ```git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm```
 Press ```Prefix + I``` to install
