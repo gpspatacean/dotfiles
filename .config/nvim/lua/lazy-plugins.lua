@@ -1,5 +1,6 @@
 require('lazy').setup({
     'tpope/vim-sleuth',
+    require 'plugins/neotree',
     require 'plugins/telescope',
     require 'plugins/tokyonight',
     require 'plugins/which-key',
