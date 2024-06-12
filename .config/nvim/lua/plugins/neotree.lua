@@ -10,6 +10,8 @@ return {
     cmd = 'Neotree',
     keys = {
       { '\\', ':Neotree reveal<CR>', { desc = 'Neotree reveal' } },
+      -- TODO: chose other keymap; check for toggle/focus combos
+      -- { 'b', ':Neotree toggle show buffers<CR>', { desc = 'Neotree buffers' } },
     },
     opts = {
       filesystem = {
@@ -17,6 +19,10 @@ return {
           mappings = {
             ['\\'] = 'close_window',
           },
+        },
+        filtered_items = {
+          visible = false,
+          hide_dotfiles = false,
         },
       },
     },
