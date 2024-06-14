@@ -9,4 +9,5 @@ require('lazy').setup({
     require 'plugins/cmp',
     require 'plugins/lspconfig',
     require 'plugins/autopairs',
+    require 'plugins/lazygit',
 });
