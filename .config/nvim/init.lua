@@ -2,6 +2,7 @@
 vim.g.mapleader = ' ';
 vim.g.localmapleader = ' ';
 vim.g.have_nerd_font = true
+vim.g.netrw_liststyle = 3
 vim.cmd.colorscheme 'slate'
 vim.cmd.highlight 'Comment gui=none'
 
