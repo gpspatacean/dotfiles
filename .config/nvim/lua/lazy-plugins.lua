@@ -7,6 +7,6 @@ require('lazy').setup({
     require 'plugins/treesitter',
     require 'plugins/lualine',
     require 'plugins/cmp',
-    require 'plugins/lspconfig'
-
+    require 'plugins/lspconfig',
+    require 'plugins/autopairs',
 });
