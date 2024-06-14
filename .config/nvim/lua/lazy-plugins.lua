@@ -10,4 +10,5 @@ require('lazy').setup({
     require 'plugins/lspconfig',
     require 'plugins/autopairs',
     require 'plugins/lazygit',
+    require 'plugins/conform'
 });
