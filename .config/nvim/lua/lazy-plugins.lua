@@ -1,5 +1,6 @@
 require('lazy').setup({
     'tpope/vim-sleuth',
+    'christoomey/vim-tmux-navigator',
     require 'plugins/neotree',
     require 'plugins/telescope',
     require 'plugins/tokyonight',
