@@ -30,5 +30,6 @@ vim.opt.wrap = false -- Do not wrap lines longer than screen width
 -- Tabs & identation
 vim.opt.autoindent = true -- Copy indentation from current line when starting a new one
 
--- vim.opt.list = true
--- vim.opt.listchars = { tab = '>> ', trail = '-', nbsp = "_" }
+vim.opt.list = true
+-- vim.opt.listchars = { tab = "\\u2192 \\u2192", trail = "\\u2297", nbsp = "_", eol = "\\u21b2" }
+vim.opt.listchars = { tab = "-->", trail = "\\u2297", nbsp = "_", eol = "\\u21b2" }
