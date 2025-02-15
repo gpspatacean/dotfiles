@@ -9,6 +9,6 @@
 	branch = true
 	showStash = true
 [format]
-	pretty = oneline
+	pretty = format:%C(yellow)%h%Creset %C(white)%an%Creset %C(green)%ad%Creset \t%C(cyan)%s
 [alias]
-	lg = log --all --decorate --oneline --graph
+	lg = log --all --decorate --oneline --graph --pretty=format:'%C(yellow)%h%Creset %C(white)%an%Creset %C(green)%ad%Creset \t%C(cyan)%s'
