@@ -13,6 +13,18 @@
                     "type": "session"
                 },
                 {
+                    "type":"os",
+                    "style":"powerline",
+                    "powerline_symbol": "\ue0b0",
+                    "template": " {{.Icon}} ",
+                    "foreground": "#26C6DA",
+                    "background": "#546E7A",
+                    "properties":
+                    {
+                        "windows":"\uf17a"
+                    }
+                },
+                {
                     "background": "#ef5350",
                     "foreground": "#FFFB38",
                     "style": "diamond",
