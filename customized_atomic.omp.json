@@ -9,14 +9,14 @@
                     "foreground": "#ffffff",
                     "leading_diamond": "\u256d\u2500\ue0b6",
                     "style": "diamond",
-                    "template": "<#ffff55>{{ .UserName }}</><#ff5555>@</><#55ff55>{{ .HostName }} </>",
+                    "template": "<#ffff55>{{ .UserName }}</><#ff5555>\uf1fa </><#55ff55>{{ .HostName }} </>",
                     "type": "session"
                 },
                 {
                     "type":"os",
                     "style":"powerline",
                     "powerline_symbol": "\ue0b0",
-                    "template": " {{.Icon}} ",
+                    "template": " {{.Icon}} {{ if .WSL }}\uf1fa WSL{{ end }} ",
                     "foreground": "#26C6DA",
                     "background": "#546E7A",
                     "properties":
