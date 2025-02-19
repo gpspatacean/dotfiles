@@ -24,12 +24,6 @@ function nppd_method {
 }
 Set-Alias -Name nppd -Value nppd_method
 
-# Utility Command that tells you where the absolute path of commandlets are
-function which ($command) {
- Get-Command -Name $command -ErrorAction SilentlyContinue |
- Select-Object -ExpandProperty Path -ErrorAction SilentlyContinue
-}
-
 #Git related stuff
 function git-status {
 	git status
@@ -63,7 +57,7 @@ Set-Alias -Name ls -Value eza-cmd -Option AllScope
 
 # Utility Command that tells you where the absolute path of commandlets are
 function which ($command) {
- Get-Command -Name $command -ErrorAction SilentlyContinue |
+ Get-Command -Name $command |
  Select-Object -ExpandProperty Path -ErrorAction SilentlyContinue
 }
 
