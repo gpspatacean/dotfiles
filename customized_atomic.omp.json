@@ -28,7 +28,7 @@
                     "background": "#ef5350",
                     "foreground": "#FFFB38",
                     "style": "diamond",
-                    "template": "<parentBackground>\ue0b0</> \uf292 ",
+                    "template": "<parentBackground> \uf292 ",
                     "type": "root"
                 },
                 {
