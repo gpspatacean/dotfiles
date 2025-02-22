@@ -61,6 +61,7 @@ function which ($command) {
 }
 
 # Environment Variables
-$env:BAT_CONFIG_PATH="$env:USERPROFILE\.config\bat\config" #`bat` config file path
+$env:XDG_CONFIG_HOME="$env:USERPROFILE\.config"
+$env:BAT_CONFIG_PATH="$env:XDG_CONFIG_HOME\bat\config" #`bat` config file path
 $env:FZF_CTRL_T_OPTS = "--preview 'if exist {}/ ( eza -al --classify=always --color=always --icons=always --show-symlinks --git-ignore --follow-symlinks {} ) else ( bat {} )'"
 $env:FZF_ALT_C_OPTS="--preview 'eza -alT --classify=always --color=always --icons=always --show-symlinks --git-ignore --follow-symlinks -L=2 {}'"
