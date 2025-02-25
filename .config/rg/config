@@ -1,0 +1,7 @@
+# ripgrep configuration file
+--max-columns=150
+--max-columns-preview
+
+--smart-case
+--follow
+--hidden

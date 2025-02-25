@@ -26,4 +26,11 @@ https://github.com/sharkdp/bat
 
 `sudo apt install bat`
 
-`winget install sharkdp.bat `
+`winget install sharkdp.bat`
+
+### ripgrep
+https://github.com/BurntSushi/ripgrep
+
+`sudo apt-get install ripgrep`
+
+`winget install BurntSushi.ripgrep.MSVC`
