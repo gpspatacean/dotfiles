@@ -17,3 +17,7 @@ require("lazy-bootstrap");
 
 -- Load plugins
 require("lazy-plugins");
+--
+-- Load autocmds
+require("utils/autocmds");
+

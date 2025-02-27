@@ -38,3 +38,6 @@ vim.opt.listchars = { tab = "-->", trail = "\\u2297", nbsp = "_", eol = "\\u21b2
 vim.opt.timeout = true
 vim.opt.timeoutlen = 500
 
+if vim.fn.has "win32" == 1 then
+  vim.o.shell = "powershell.exe"
+end

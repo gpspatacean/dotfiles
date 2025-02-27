@@ -1,5 +1,6 @@
 vim.keymap.set("i", "jk", "<Esc>", { desc = "Exit insert mode with \"jk\"" });
 vim.keymap.set("n", "<leader>nh", ":nohl<CR>",  { desc = "Clear search highlights" });
+vim.keymap.set("t", "jk", "<C-\\><C-n>", { desc = "Exit terminal mode with \"jk\"" });
 
 -- Splits management
 vim.keymap.set("n", "<leader>s|", "<C-w>v", { desc = "Split window vertically"})
