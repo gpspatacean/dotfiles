@@ -25,3 +25,5 @@ vim.keymap.set("n", "<leader>ls", "<cmd>source %<CR>")
 vim.keymap.set("n", "<leader>lx", ":.lua<CR>")
 vim.keymap.set("v", "<leader>lx", ":lua<CR>")
 
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
