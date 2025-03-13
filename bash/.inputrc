@@ -1,0 +1,16 @@
+"\ej": next-history
+"\ek": previous-history
+"\el": accept-line
+"\eh": backward-delete-char
+
+"\ea": unix-line-discard
+"\ed": kill-line
+
+"\C-a": beginning-of-line
+"\C-d": end-of-line
+
+"\e\C-j": backward-char
+"\e\C-h": backward-word
+"\e\C-k": forward-char
+"\e\C-l": forward-word
+
