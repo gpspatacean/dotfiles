@@ -1,16 +1,20 @@
-"\ej": next-history
-"\ek": previous-history
-"\el": accept-line
-"\eh": backward-delete-char
+# Re-maps for readline to be used in bash
 
-"\ea": unix-line-discard
-"\ed": kill-line
+"\ej": next-history # Next item in history
+"\ek": previous-history # Previous item in history
+"\el": accept-line # Enter
+"\eh": backward-delete-char # Delete the character before the cursor, BACKSPACE
 
-"\C-a": beginning-of-line
-"\C-d": end-of-line
+"\ea": unix-line-discard # Delete everything from the cursor to the beginning of line
+"\ed": kill-line # Delete everything from the cursor to the end of line
 
-"\e\C-j": backward-char
-"\e\C-h": backward-word
-"\e\C-k": forward-char
-"\e\C-l": forward-word
+"\C-a": beginning-of-line # Go to the beginning of line
+"\C-d": end-of-line # Go to the end of line
 
+"\e\C-j": backward-char # Go backward one character
+"\e\C-h": backward-word # Go to the beginning of the current word, or to the previous word
+"\e\C-k": forward-char # Go forward one character
+"\e\C-l": forward-word # Go to the end of the current word, or the the next word
+
+# Not remaps, but important
+# "\e\C-d": shell-kill-word # Delete everything from the cursor to the end of the word
