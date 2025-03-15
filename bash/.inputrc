@@ -5,11 +5,11 @@
 "\el": accept-line # Enter
 "\eh": backward-delete-char # Delete the character before the cursor, BACKSPACE
 
-"\ea": unix-line-discard # Delete everything from the cursor to the beginning of line
-"\ed": kill-line # Delete everything from the cursor to the end of line
+"\C-a": unix-line-discard # Delete everything from the cursor to the beginning of line
+"\C-d": kill-line # Delete everything from the cursor to the end of line
 
-"\C-a": beginning-of-line # Go to the beginning of line
-"\C-d": end-of-line # Go to the end of line
+"\ea": beginning-of-line # Go to the beginning of line
+"\ed": end-of-line # Go to the end of line
 
 "\e\C-j": backward-char # Go backward one character
 "\e\C-h": backward-word # Go to the beginning of the current word, or to the previous word
