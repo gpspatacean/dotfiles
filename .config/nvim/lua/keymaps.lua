@@ -12,6 +12,7 @@ vim.keymap.set("n", "<leader>sx", "<cmd>close<CR>", { desc = "Close current spli
 vim.keymap.set("n", "<Tab>", "<cmd>bnext<CR>", { desc = "Next Buffer" })
 vim.keymap.set("n", "<S-Tab>", "<cmd>bprev<CR>", { desc = "Previous Buffer" })
 vim.keymap.set("n", "<Tab><Tab>", "<cmd>ls<CR>", { desc = "List Buffers" })
+vim.keymap.set("n", "<A-q>", "<cmd>bd<CR>", { desc = "Delete Current Buffer" })
 
 -- Tabs management
 vim.keymap.set("n", "<leader>to", "<cmd>tabnew<CR>", { desc = "Open new tab" })
@@ -28,3 +29,6 @@ vim.keymap.set("v", "<leader>lx", ":lua<CR>", { desc = "Run current lines with l
 -- Move lines around
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move current line(s) down" })
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move current line(s) up" })
+
+-- Random
+vim.keymap.set("n", "q", "<nop>", { desc = "Disable macro recording" })
