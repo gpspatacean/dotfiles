@@ -1,6 +1,6 @@
 -- Show line numbers
 vim.opt.number = true
--- Show line numbers around current line as relative numbers to the current line 
+-- Show line numbers around current line as relative numbers to the current line
 vim.opt.relativenumber = true
 
 -- Search settings
@@ -10,7 +10,7 @@ vim.opt.ignorecase = true -- By default, ignore case when searching...
 vim.opt.smartcase = true -- ...but revert to case sensitiveness when search pattern is mixed case
 
 -- Always have at least 8 rows shown at the top or the bottom of the screen
-vim.opt.scrolloff=8
+vim.opt.scrolloff = 8
 
 -- Configure where new splits should be opened
 vim.opt.splitright = true
@@ -19,7 +19,7 @@ vim.opt.splitbelow = true
 -- Enable changed and unsaved buffers to be switched from
 vim.opt.hidden = true
 
--- Show the current line 
+-- Show the current line
 vim.opt.cursorline = true
 
 -- Disable VIM mode feedback in command line bar
@@ -38,6 +38,6 @@ vim.opt.listchars = { tab = "-->", trail = "\\u2297", nbsp = "_", eol = "\\u21b2
 vim.opt.timeout = true
 vim.opt.timeoutlen = 500
 
-if vim.fn.has "win32" == 1 then
+if vim.fn.has("win32") == 1 then
   vim.o.shell = "powershell.exe"
 end

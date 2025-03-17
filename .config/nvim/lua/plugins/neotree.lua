@@ -1,15 +1,15 @@
 return {
   {
-    'nvim-neo-tree/neo-tree.nvim',
+    "nvim-neo-tree/neo-tree.nvim",
     branch = "v3.x",
     dependencies = {
-      'nvim-lua/plenary.nvim',
-      'nvim-tree/nvim-web-devicons',
-      'MunifTanjim/nui.nvim',
+      "nvim-lua/plenary.nvim",
+      "nvim-tree/nvim-web-devicons",
+      "MunifTanjim/nui.nvim",
     },
-    cmd = 'Neotree',
+    cmd = "Neotree",
     keys = {
-      { '\\', ':Neotree reveal<CR>', { desc = 'Neotree reveal' } },
+      { "\\", ":Neotree reveal<CR>", { desc = "Neotree reveal" } },
       -- TODO: chose other keymap; check for toggle/focus combos
       -- { 'b', ':Neotree toggle show buffers<CR>', { desc = 'Neotree buffers' } },
     },
@@ -17,7 +17,7 @@ return {
       filesystem = {
         window = {
           mappings = {
-            ['\\'] = 'close_window',
+            ["\\"] = "close_window",
           },
         },
         filtered_items = {

@@ -6,7 +6,7 @@ return {
   },
   config = function()
     -- import nvim-autopairs
-    local autopairs = require('nvim-autopairs')
+    local autopairs = require("nvim-autopairs")
 
     -- configure autopairs
     autopairs.setup({

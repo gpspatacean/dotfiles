@@ -5,15 +5,15 @@ end
 
 return {
   {
-    'nvim-lualine/lualine.nvim',
-    dependencies = { 'nvim-tree/nvim-web-devicons' },
+    "nvim-lualine/lualine.nvim",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
     config = function()
-      require('lualine').setup{
-        options = { theme = 'powerline' },
+      require("lualine").setup({
+        options = { theme = "powerline" },
         sections = {
-          lualine_c = {'filename', 'buffers'}
-        }
-      }
+          lualine_c = { "filename", "buffers" },
+        },
+      })
     end,
-  }
+  },
 }
