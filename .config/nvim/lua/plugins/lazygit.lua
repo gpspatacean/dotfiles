@@ -19,7 +19,9 @@ return {
   config = function()
     vim.g.lazygit_on_exit_callback = function()
       vim.keymap.set("t", "jk", "<C-\\><C-n>", { desc = 'Exit terminal mode with "jk"' })
-      vim.o.shell = "powershell.exe"
+      if vim.fn.has'win32' == 1 then
+        vim.o.shell = "powershell.exe"
+      end
     end
   end,
 }
