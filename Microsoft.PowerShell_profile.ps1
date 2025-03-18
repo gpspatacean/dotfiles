@@ -66,3 +66,24 @@ $env:BAT_CONFIG_PATH="$env:XDG_CONFIG_HOME\bat\config" #`bat` config file path
 $env:RIPGREP_CONFIG_PATH="$env:XDG_CONFIG_HOME\rg\config" #'rg' config file path
 $env:FZF_CTRL_T_OPTS = "--preview 'if exist {}/ ( eza -al --classify=always --color=always --icons=always --show-symlinks --git-ignore --follow-symlinks {} ) else ( bat {} )'"
 $env:FZF_ALT_C_OPTS="--preview 'eza -alT --classify=always --color=always --icons=always --show-symlinks --git-ignore --follow-symlinks -L=2 {}'"
+
+#Re-maps for readline to be used in powershell
+#Strive to be identical between powershell and bash
+
+Set-PSReadLineKeyHandler -chord Alt+j -function NextHistory # Next item in history
+Set-PSReadLineKeyHandler -chord Alt+k -function PreviousHistory # Previous item in history
+Set-PSReadLineKeyHandler -chord Alt+l -function AcceptLine # Enter
+Set-PSReadLineKeyHandler -chord Alt+h -function BackwardDeleteChar # Delete the character before the cursor, BACKSPACE
+
+Set-PSReadLineKeyHandler -chord Ctrl+a -function BackwardDeleteLine # Delete everything from the cursor to the beginning of line
+Set-PSReadLineKeyHandler -chord Ctrl+d -function ForwardDeleteLine # Delete everything from the cursor to the end of line
+
+Set-PSReadLineKeyHandler -chord Alt+a -function BeginningOfLine # Go to the beginning of line
+Set-PSReadLineKeyHandler -chord Alt+d -function EndOfLine # Go to the end of line
+
+Set-PSReadLineKeyHandler -chord Alt+Ctrl+j -function BackwardChar # Go backward one character
+Set-PSReadLineKeyHandler -chord Alt+Ctrl+h -function BackwardWord # Go to the beginning of the current word, or the previous word
+Set-PSReadLineKeyHandler -chord Alt+Ctrl+k -function ForwardChar # Go Forward one character
+Set-PSReadLineKeyHandler -chord Alt+Ctrl+l -function ForwardWord # Go to the end of the current word, or the next word
+
+Set-PSReadLineKeyHandler -chord Alt+Ctrl+d -function KillWord # Delete everything from the current cursor to the end of word
