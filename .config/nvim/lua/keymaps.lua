@@ -32,3 +32,13 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move current line(s) up" 
 
 -- Random
 vim.keymap.set("n", "q", "<nop>", { desc = "Disable macro recording" })
+
+-- Movement while in insert mode
+vim.keymap.set("i", "<A-h>", "<Left>", { desc = "Go one character left" })
+vim.keymap.set("i", "<A-j>", "<Down>", { desc = "Go one character down" })
+vim.keymap.set("i", "<A-k>", "<Up>", { desc = "Go one character up" })
+vim.keymap.set("i", "<A-l>", "<Right>", { desc = "Go one character right" })
+vim.keymap.set("i", "<S-h>", "<S-Left>", { desc = "Go one word left" })
+vim.keymap.set("i", "<S-j>", "<S-Down>", { desc = "Page Down" })
+vim.keymap.set("i", "<S-k>", "<S-Up>", { desc = "Page Up" })
+vim.keymap.set("i", "<S-l>", "<S-Right>", { desc = "Go one word right" })
