@@ -25,7 +25,11 @@ vim.opt.cursorline = true
 -- Disable VIM mode feedback in command line bar
 vim.opt.showmode = false
 
-vim.opt.wrap = false -- Do not wrap lines longer than screen width
+-- Do not wrap lines longer than screen width
+vim.opt.wrap = false
+
+-- Do not use swapfile
+vim.opt.swapfile = false
 
 -- Tabs & identation
 vim.opt.autoindent = true -- Copy indentation from current line when starting a new one
