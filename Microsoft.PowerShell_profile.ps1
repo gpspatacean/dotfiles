@@ -60,6 +60,21 @@ function which ($command) {
  Select-Object -ExpandProperty Path -ErrorAction SilentlyContinue
 }
 
+# Unix `touch` command
+function touch {
+    param(
+		[Parameter(ValueFromRemainingArguments = $true)]
+		[String[]]$PassThruParams
+    )
+    foreach ($FileName in $PassThruParams) {
+        if (-not (Test-Path $FileName)) {
+            New-Item -Path $FileName -ItemType File
+        } else {
+            (Get-Item $FileName).LastWriteTime = Get-Date
+        }
+    }
+}
+
 # Environment Variables
 $env:XDG_CONFIG_HOME="$env:USERPROFILE\.config"
 $env:BAT_CONFIG_PATH="$env:XDG_CONFIG_HOME\bat\config" #`bat` config file path
