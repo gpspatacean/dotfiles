@@ -62,17 +62,17 @@ function which ($command) {
 
 # Unix `touch` command
 function touch {
-    param(
+	param(
 		[Parameter(ValueFromRemainingArguments = $true)]
 		[String[]]$PassThruParams
-    )
-    foreach ($FileName in $PassThruParams) {
-        if (-not (Test-Path $FileName)) {
-            New-Item -Path $FileName -ItemType File
-        } else {
-            (Get-Item $FileName).LastWriteTime = Get-Date
-        }
-    }
+	)
+	foreach ($FileName in $PassThruParams) {
+		if (-not (Test-Path $FileName)) {
+			New-Item -Path $FileName -ItemType File
+		} else {
+			(Get-Item $FileName).LastWriteTime = Get-Date
+		}
+	}
 }
 
 # Environment Variables
