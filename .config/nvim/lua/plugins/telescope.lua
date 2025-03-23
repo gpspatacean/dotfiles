@@ -69,9 +69,17 @@ return {
           },
           mappings = {
             i = {
+              ["<A-k>"] = actions.move_selection_previous, -- move to prev result
+              ["<A-j>"] = actions.move_selection_next, -- move to next result
+              ["<A-h>"] = actions.preview_scrolling_down, -- scroll down the preview window
+              ["<A-l>"] = actions.preview_scrolling_up, -- scroll up the preview window
               ["<C-k>"] = actions.move_selection_previous, -- move to prev result
               ["<C-j>"] = actions.move_selection_next, -- move to next result
               ["<C-q>"] = actions.send_selected_to_qflist + actions.open_qflist, -- move to next result
+            },
+            n = {
+              ["h"] = actions.preview_scrolling_down, -- scroll down the preview window
+              ["l"] = actions.preview_scrolling_up, -- scroll up the preview window
             },
           },
         },
