@@ -73,6 +73,8 @@ return {
               ["<A-j>"] = actions.move_selection_next, -- move to next result
               ["<A-h>"] = actions.preview_scrolling_down, -- scroll down the preview window
               ["<A-l>"] = actions.preview_scrolling_up, -- scroll up the preview window
+              ["|"] = actions.select_vertical, -- open selection in a new vertical split
+              ["-"] = actions.select_horizontal, -- open selection in a new horizontal split
               ["<C-k>"] = actions.move_selection_previous, -- move to prev result
               ["<C-j>"] = actions.move_selection_next, -- move to next result
               ["<C-q>"] = actions.send_selected_to_qflist + actions.open_qflist, -- move to next result
@@ -80,6 +82,8 @@ return {
             n = {
               ["h"] = actions.preview_scrolling_down, -- scroll down the preview window
               ["l"] = actions.preview_scrolling_up, -- scroll up the preview window
+              ["|"] = actions.select_vertical, -- open selection in a new vertical split
+              ["-"] = actions.select_horizontal, -- open selection in a new horizontal split
             },
           },
         },
