@@ -80,9 +80,9 @@ $env:XDG_CONFIG_HOME="$env:USERPROFILE\.config"
 $env:BAT_CONFIG_PATH="$env:XDG_CONFIG_HOME\bat\config" #`bat` config file path
 $env:RIPGREP_CONFIG_PATH="$env:XDG_CONFIG_HOME\rg\config" #'rg' config file path
 $env:YAZI_CONFIG_HOME="$env:XDG_CONFIG_HOME\yazi" # `yazi` config home
-$env:FZF_CTRL_T_OPTS = "--preview 'if exist {}/ ( eza -al --classify=always --color=always --icons=always --show-symlinks --git-ignore --follow-symlinks {} ) else ( bat {} )'"
-$env:FZF_ALT_C_OPTS="--preview 'eza -alT --classify=always --color=always --icons=always --show-symlinks --git-ignore --follow-symlinks -L=2 {}'"
 $env:FZF_DEFAULT_OPTS="--bind=alt-j:down,alt-k:up,alt-h:preview-down,alt-l:preview-up"
+$env:FZF_CTRL_T_OPTS="--preview 'if exist {}/ ( eza -al --classify=always --color=always --icons=always --show-symlinks --follow-symlinks --git-ignore {} ) else ( bat {} )'"
+$env:FZF_ALT_C_OPTS="--preview 'eza -alT --classify=always --color=always --icons=always --show-symlinks --follow-symlinks --git-ignore -L=2 {}'"
 
 #Re-maps for readline to be used in powershell
 #Strive to be identical between powershell and bash
