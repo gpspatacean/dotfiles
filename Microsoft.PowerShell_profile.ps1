@@ -79,6 +79,7 @@ function touch {
 $env:XDG_CONFIG_HOME="$env:USERPROFILE\.config"
 $env:BAT_CONFIG_PATH="$env:XDG_CONFIG_HOME\bat\config" #`bat` config file path
 $env:RIPGREP_CONFIG_PATH="$env:XDG_CONFIG_HOME\rg\config" #'rg' config file path
+$env:YAZI_CONFIG_HOME="$env:XDG_CONFIG_HOME\yazi" # `yazi` config home
 $env:FZF_CTRL_T_OPTS = "--preview 'if exist {}/ ( eza -al --classify=always --color=always --icons=always --show-symlinks --git-ignore --follow-symlinks {} ) else ( bat {} )'"
 $env:FZF_ALT_C_OPTS="--preview 'eza -alT --classify=always --color=always --icons=always --show-symlinks --git-ignore --follow-symlinks -L=2 {}'"
 

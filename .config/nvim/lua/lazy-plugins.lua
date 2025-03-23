@@ -12,4 +12,5 @@ require("lazy").setup({
   require("plugins/autopairs"),
   require("plugins/lazygit"),
   require("plugins/conform"),
+  require("plugins/yazi"),
 })

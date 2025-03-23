@@ -1,0 +1,10 @@
+[flavor]
+dark = "catppuccin-macchiato"
+light = "catppuccin-macchiato"
+
+[manager]
+preview_hovered = { underline = false }
+
+[icon]
+append_exts = [
+]
