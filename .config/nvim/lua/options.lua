@@ -45,3 +45,9 @@ vim.opt.timeoutlen = 500
 if vim.fn.has("win32") == 1 then
   vim.o.shell = "powershell.exe"
 end
+
+-- Folding settings
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+vim.opt.foldlevel = 99 -- minimum level of default closed folds, we don't want this.
+vim.opt.foldtext = ""
