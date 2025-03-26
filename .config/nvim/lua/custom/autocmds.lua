@@ -84,7 +84,12 @@ vim.api.nvim_create_user_command(
   toggle_terminal,
   { desc = "Toggles On/Off the floating terminal" }
 )
-vim.keymap.set({ "n", "t" }, "tt", "<cmd>ToggleFloatingTerminal<CR>", { desc = "Toggles On/Off the floating terminal" })
+vim.keymap.set(
+  { "n", "t" },
+  "<leader>tt",
+  "<cmd>ToggleFloatingTerminal<CR>",
+  { desc = "Toggles On/Off the floating terminal" }
+)
 
 -- Highlight when yanking
 vim.api.nvim_create_autocmd("TextYankPost", {
