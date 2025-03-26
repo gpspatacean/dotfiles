@@ -13,4 +13,5 @@ require("lazy").setup({
   require("plugins/lazygit"),
   require("plugins/conform"),
   require("plugins/yazi"),
+  require("plugins/indent-blankline"),
 })
