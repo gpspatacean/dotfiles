@@ -1,3 +1,5 @@
+-- Nvim terminal functionality
+
 local state = {
   floating = {
     buf = -1,
