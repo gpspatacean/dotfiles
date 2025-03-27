@@ -1,26 +1,3 @@
--- Do not show line numbers in the terminal
-vim.api.nvim_create_autocmd("TermOpen", {
-  group = vim.api.nvim_create_augroup("custom-term-open", { clear = true }),
-  callback = function()
-    vim.opt.number = false
-    vim.opt.relativenumber = false
-  end,
-})
-
--- Custom LazyGit Launcher, because
--- 1) lazygit doesn't get along with powershell
--- 2) j/k terminal map messes up j/k navigation in lazygit
--- These are resetted in lazygit_on_exit_callback
-vim.api.nvim_create_user_command("LaunchLazyGit", function()
-  if vim.fn.has("win32") == 1 then
-    vim.o.shell = "cmd.exe"
-  end
-
-  vim.keymap.del("t", "jk")
-
-  vim.cmd("LazyGit")
-end, { desc = "Custom lazygit launcher" })
-
 local state = {
   floating = {
     buf = -1,
@@ -90,31 +67,3 @@ vim.keymap.set(
   "<cmd>ToggleFloatingTerminal<CR>",
   { desc = "Toggles On/Off the floating terminal" }
 )
-
--- Highlight when yanking
-vim.api.nvim_create_autocmd("TextYankPost", {
-  desc = "Highlight the text being yanked",
-  group = vim.api.nvim_create_augroup("highlight-text", { clear = true }),
-  callback = function()
-    vim.highlight.on_yank({ timeout = 250 })
-  end,
-})
-
--- Custom Yazi Launcher, because
--- 1) yazi doesn't get along with powershell
--- 2) j/k terminal map messes up j/k navigation in yazi
--- These are resetted in `yazi_closed_successfully` hook
-vim.api.nvim_create_user_command("LaunchYazi", function(opts)
-  if vim.fn.has("win32") == 1 then
-    vim.o.shell = "cmd.exe"
-  end
-
-  vim.keymap.del("t", "jk")
-
-  local launchMode = opts.args
-  if launchMode == "toggle" then
-    vim.cmd("Yazi toggle")
-  elseif launchMode == "current" then
-    vim.cmd("Yazi")
-  end
-end, { desc = "Custom Yazi launcher", nargs = 1 })

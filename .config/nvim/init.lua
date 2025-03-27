@@ -18,5 +18,5 @@ require("lazy-bootstrap")
 -- Load plugins
 require("lazy-plugins")
 --
--- Load autocmds
-require("custom/autocmds")
+-- Load personals
+require("personals")
