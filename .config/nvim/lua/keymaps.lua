@@ -38,7 +38,13 @@ vim.keymap.set("i", "<A-h>", "<Left>", { desc = "Go one character left" })
 vim.keymap.set("i", "<A-j>", "<Down>", { desc = "Go one character down" })
 vim.keymap.set("i", "<A-k>", "<Up>", { desc = "Go one character up" })
 vim.keymap.set("i", "<A-l>", "<Right>", { desc = "Go one character right" })
-vim.keymap.set("i", "<C-h>", "<S-Left>", { desc = "Go one word left" })
+-- conflict with cmp for snippet completion; vim.keymap.set("i", "<C-h>", "<S-Left>", { desc = "Go one word left" })
 vim.keymap.set("i", "<C-j>", "<S-Down>", { desc = "Page Down" })
 vim.keymap.set("i", "<C-k>", "<S-Up>", { desc = "Page Up" })
-vim.keymap.set("i", "<C-l>", "<S-Right>", { desc = "Go one word right" })
+-- conflict with cmp for snippet completion; vim.keymap.set("i", "<C-l>", "<S-Right>", { desc = "Go one word right" })
+--
+vim.keymap.set("n", "x", '"_x', { desc = "Do not put single deleted char into register" })
+
+-- Find and center
+vim.keymap.set("n", "n", "nzzzv")
+vim.keymap.set("n", "N", "Nzzzv")
