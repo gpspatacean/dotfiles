@@ -89,17 +89,6 @@ fi
 # colored GCC warnings and errors
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
-# some more ls aliases
-#alias ll='ls -alF'
-#alias la='ls -A'
-#alias l='ls -CF'
-alias ls="eza -al --classify=always --color=always --icons=always --show-symlinks --follow-symlinks"
-alias lg="lazygit"
-
-# Add an "alert" alias for long running commands.  Use like so:
-#   sleep 10; alert
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
-
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
@@ -124,8 +113,6 @@ eval "$(oh-my-posh init bash --config ~/.config/customized_atomic.omp.json)"
 
 
 [ -f "${XDG_CONFIG_HOME:-$HOME/.config}"/fzf/fzf.bash ] && source "${XDG_CONFIG_HOME:-$HOME/.config}"/fzf/fzf.bash
-
-alias fd=fdfind
 
 export BAT_CONFIG_PATH="$HOME/.config/bat/config"
 export FZF_DEFAULT_OPTS="--bind=alt-j:down,alt-k:up,alt-h:preview-down,alt-l:preview-up"
