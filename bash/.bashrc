@@ -109,13 +109,21 @@ if ! shopt -oq posix; then
   fi
 fi
 
-eval "$(oh-my-posh init bash --config ~/.config/customized_atomic.omp.json)"
+export XDG_CONFIG_HOME="$HOME/.config/"
 
+eval "$(oh-my-posh init bash --config $XDG_CONFIG_HOME/customized_atomic.omp.json)"
 
 [ -f "${XDG_CONFIG_HOME:-$HOME/.config}"/fzf/fzf.bash ] && source "${XDG_CONFIG_HOME:-$HOME/.config}"/fzf/fzf.bash
 
-export BAT_CONFIG_PATH="$HOME/.config/bat/config"
+export BAT_CONFIG_PATH="$XDG_CONFIG_HOME/bat/config"
+export RIPGREP_CONFIG_PATH="XDG_CONFIG_HOME/rg/config" #'rg' config file path
+export YAZI_CONFIG_HOME="$XDG_CONFIG_HOME/yazi" # `yazi` config home
 export FZF_DEFAULT_OPTS="--bind=alt-j:down,alt-k:up,alt-h:preview-down,alt-l:preview-up"
 export FZF_CTRL_T_OPTS="--preview 'bat {} 2>/dev/null || eza -alT --classify=always --color=always --icons=always --show-symlinks --follow-symlinks --git-ignore -L=1 {} '"
 export FZF_ALT_C_OPTS="--preview 'eza -alT --classify=always --color=always --icons=always --show-symlinks --follow-symlinks --git-ignore -L=2 {}'"
+
+# If there's a customization file, source it at the end
+if [ -f ~/.bash_customizations ]; then
+    . ~/.bash_customizations
+fi
 
