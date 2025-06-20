@@ -93,7 +93,7 @@ Set-PSReadLineKeyHandler -chord Alt+l -function AcceptLine # Enter
 Set-PSReadLineKeyHandler -chord Alt+h -function BackwardDeleteChar # Delete the character before the cursor, BACKSPACE
 
 Set-PSReadLineKeyHandler -chord Ctrl+a -function BackwardDeleteLine # Delete everything from the cursor to the beginning of line
-Set-PSReadLineKeyHandler -chord Alt+Ctrl+a -function BackwardDeleteWord # Delete everything from the cursor to the beginning of line
+Set-PSReadLineKeyHandler -chord Alt+Ctrl+a -function BackwardDeleteWord # Delete everything from the cursor to the beginning of word
 Set-PSReadLineKeyHandler -chord Ctrl+d -function ForwardDeleteLine # Delete everything from the cursor to the end of line
 Set-PSReadLineKeyHandler -chord Alt+Ctrl+d -function DeleteWord # Delete everything from the current cursor to the end of word
 
