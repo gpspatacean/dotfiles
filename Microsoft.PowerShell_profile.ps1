@@ -108,3 +108,7 @@ Set-PSReadLineKeyHandler -chord Alt+Ctrl+j -function BackwardChar # Go backward 
 Set-PSReadLineKeyHandler -chord Alt+Ctrl+h -function BackwardWord # Go to the beginning of the current word, or the previous word
 Set-PSReadLineKeyHandler -chord Alt+Ctrl+k -function ForwardChar # Go Forward one character
 Set-PSReadLineKeyHandler -chord Alt+Ctrl+l -function ForwardWord # Go to the end of the current word, or the next word
+
+#Other setups
+Set-PSReadLineKeyHandler -Key Tab -Function Complete
+Set-PSReadLineOption -BellStyle None
