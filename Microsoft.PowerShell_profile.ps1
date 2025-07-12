@@ -6,7 +6,11 @@ Import-Module PSFzf
 Set-PsFzfOption -PSReadlineChordProvider 'Ctrl+t' -PSReadlineChordReverseHistory 'Ctrl+r'
 
 #Notepad++
-Set-Alias -Name npp -Value "C:\Program Files (x86)\Notepad++\notepad++.exe"
+if (Test-Path "C:\Program Files\Notepad++\notepad++.exe") {
+    Set-Alias -Name npp -Value "C:\Program Files\Notepad++\notepad++.exe"
+} elseif (Test-Path "C:\Program Files (x86)\Notepad++\notepad++.exe") {
+    Set-Alias -Name npp -Value "C:\Program Files (x86)\Notepad++\notepad++.exe"
+}
 
 #Open a file in a new notepad instance
 function nppi_method {
