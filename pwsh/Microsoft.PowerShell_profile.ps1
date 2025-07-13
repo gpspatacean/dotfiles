@@ -1,6 +1,16 @@
 #Init oh-my-posh; theme should be present
 oh-my-posh init pwsh --config "$env:USERPROFILE\.config\customized_atomic.omp.json" | Invoke-Expression
 
+#Init zoxide if installed
+if (Get-Command "zoxide.exe" -ErrorAction SilentlyContinue)
+{
+	Invoke-Expression (& { (zoxide init powershell --cmd cd | Out-String) })
+}
+else
+{
+	Write-Host "Zoxide is not installed."
+}
+
 #Fzf (Import the fuzzy finder and set a shortcut key to begin searching)
 Import-Module PSFzf
 Set-PsFzfOption -PSReadlineChordProvider 'Ctrl+t' -PSReadlineChordReverseHistory 'Ctrl+r'
