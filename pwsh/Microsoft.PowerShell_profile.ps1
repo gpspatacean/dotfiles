@@ -1,5 +1,20 @@
 #Init oh-my-posh; theme should be present
-oh-my-posh init pwsh --config "$env:USERPROFILE\.config\customized_atomic.omp.json" | Invoke-Expression
+if (Get-Command "oh-my-posh.exe" -ErrorAction SilentlyContinue)
+{
+	if (Test-Path "$env:USERPROFILE\.config\customized_atomic.omp.json")
+	{
+		oh-my-posh init pwsh --config "$env:USERPROFILE\.config\customized_atomic.omp.json" | Invoke-Expression
+	}
+	else
+	{
+		Write-Host "oh-my-posh custom theme not found, using default theme."
+		oh-my-posh init pwsh | Invoke-Expression
+	}
+}
+else
+{
+	Write-Host "oh-my-posh not installed."
+}
 
 #Init zoxide if installed
 if (Get-Command "zoxide.exe" -ErrorAction SilentlyContinue)
