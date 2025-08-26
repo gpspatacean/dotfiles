@@ -27,8 +27,12 @@ else
 }
 
 #Fzf (Import the fuzzy finder and set a shortcut key to begin searching)
-Import-Module PSFzf
-Set-PsFzfOption -PSReadlineChordProvider 'Ctrl+t' -PSReadlineChordReverseHistory 'Ctrl+r'
+if (Get-Module -ListAvailable -Name PSFzf) {
+    Import-Module PSFzf
+    Set-PsFzfOption -PSReadlineChordProvider 'Ctrl+t' -PSReadlineChordReverseHistory 'Ctrl+r'
+} else {
+    Write-Host "PSFzf module is not installed."
+}
 
 #Notepad++
 if (Test-Path "C:\Program Files\Notepad++\notepad++.exe") {
