@@ -78,7 +78,12 @@ $SymlinksMap = @{
     # Example:
     # '.vimrc' = '.config\vim\.vimrc'
     "customized_atomic.omp.json" = ".config\customized_atomic.omp.json"
-    ".config\git\config" = ".config\git\config"
+    ".config\bat" = ".config\bat"
+    ".config\git" = ".config\git"
+    ".config\lazygit" = ".config\lazygit"
+    ".config\nvim" = ".config\nvim"
+    ".config\rg" = ".config\rg"
+    ".config\yazi" = ".config\yazi"
     "pwsh\Microsoft.PowerShell_profile.ps1" = "Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1"
 }
 
