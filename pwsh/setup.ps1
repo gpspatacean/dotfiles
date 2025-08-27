@@ -1,5 +1,5 @@
 # Map of AppName to Winget Id
-$AppIdMap = @{
+$WingetAppIdsMap = @{
     "oh-my-posh" = "JanDeDobbeleer.OhMyPosh"
     "fzf"        = "junegunn.fzf"
     "zoxide"     = "ajeetdsouza.zoxide"
@@ -38,8 +38,8 @@ function Check-Apps {
     param(
         [switch]$DryRun
     )
-    foreach ($app in $AppIdMap.Keys) {
-        $id = $AppIdMap[$app]
+    foreach ($app in $WingetAppIdsMap.Keys) {
+        $id = $WingetAppIdsMap[$app]
         Install-Or-Update-App -AppName $app -WingetId $id -DryRun:$DryRun
     }
 }
@@ -67,8 +67,8 @@ function Uninstall-Apps {
     param(
         [switch]$DryRun
     )
-    foreach ($app in $AppIdMap.Keys) {
-        $id = $AppIdMap[$app]
+    foreach ($app in $WingetAppIdsMap.Keys) {
+        $id = $WingetAppIdsMap[$app]
         Uninstall-App -AppName $app -WingetId $id -DryRun:$DryRun
     }
 }
@@ -148,6 +148,52 @@ function Setup-Symlinks {
         $source = Join-Path -Path $SourceDir -ChildPath $key
         $target = Join-Path -Path $TargetDir -ChildPath $SymlinksMap[$key]
         Create-Symlink -Source $source -Target $target -DryRun:$DryRun -Override:$Override
+    }
+}
+
+# Array of PowerShell modules to manage
+$PwshModules = @(
+    'PSFzf'
+)
+
+function Install-Or-Update-PwshModules {
+    param(
+        [switch]$DryRun
+    )
+    foreach ($module in $PwshModules) {
+        if (Get-Module -ListAvailable -Name $module) {
+            Write-Host "Module '$module' found. Attempting to update..."
+            if ($DryRun) {
+                Write-Host "[Dry-Run] Would run: Update-Module -Name '$module' -Force"
+            } else {
+                Update-Module -Name $module -Force
+            }
+        } else {
+            Write-Host "Module '$module' not found. Installing..."
+            if ($DryRun) {
+                Write-Host "[Dry-Run] Would run: Install-Module -Name '$module' -Scope CurrentUser -Force"
+            } else {
+                Install-Module -Name $module -Scope CurrentUser -Force
+            }
+        }
+    }
+}
+
+function Uninstall-PwshModules {
+    param(
+        [switch]$DryRun
+    )
+    foreach ($module in $PwshModules) {
+        if (Get-Module -ListAvailable -Name $module) {
+            Write-Host "Module '$module' found. Attempting to uninstall..."
+            if ($DryRun) {
+                Write-Host "[Dry-Run] Would run: Uninstall-Module -Name '$module' -AllVersions -Force"
+            } else {
+                Uninstall-Module -Name $module -AllVersions -Force
+            }
+        } else {
+            Write-Host "Module '$module' not found. Skipping uninstall."
+        }
     }
 }
 
