@@ -1,4 +1,5 @@
-# Map of AppName to Winget Id
+# $WingetAppIdsMap is a hashtable mapping application names to their corresponding Winget IDs.
+# Used for automated install, update, and uninstall of applications via Winget.
 $WingetAppIdsMap = @{
     "oh-my-posh" = "JanDeDobbeleer.OhMyPosh"
     "fzf"        = "junegunn.fzf"
@@ -11,6 +12,16 @@ $WingetAppIdsMap = @{
 }
 
 function Install-Or-Update-App {
+    <#
+    .SYNOPSIS
+        Installs or updates a given application using Winget.
+    .PARAMETER AppName
+        The name of the application.
+    .PARAMETER WingetId
+        The Winget ID of the application.
+    .PARAMETER DryRun
+        If specified, logs the actions without executing them.
+    #>
     param(
         [string]$AppName,
         [string]$WingetId,
@@ -35,6 +46,12 @@ function Install-Or-Update-App {
 }
 
 function Check-Apps {
+    <#
+    .SYNOPSIS
+        Installs or updates all applications defined in $WingetAppIdsMap.
+    .PARAMETER DryRun
+        If specified, logs the actions without executing them.
+    #>
     param(
         [switch]$DryRun
     )
@@ -45,6 +62,16 @@ function Check-Apps {
 }
 
 function Uninstall-App {
+    <#
+    .SYNOPSIS
+        Uninstalls a given application using Winget.
+    .PARAMETER AppName
+        The name of the application.
+    .PARAMETER WingetId
+        The Winget ID of the application.
+    .PARAMETER DryRun
+        If specified, logs the actions without executing them.
+    #>
     param(
         [string]$AppName,
         [string]$WingetId,
@@ -64,6 +91,12 @@ function Uninstall-App {
 }
 
 function Uninstall-Apps {
+    <#
+    .SYNOPSIS
+        Uninstalls all applications defined in $WingetAppIdsMap.
+    .PARAMETER DryRun
+        If specified, logs the actions without executing them.
+    #>
     param(
         [switch]$DryRun
     )
@@ -73,7 +106,8 @@ function Uninstall-Apps {
     }
 }
 
-# Symlinks map: key = source (relative), value = target (relative)
+# $SymlinksMap is a hashtable where each key is a relative source path and each value is a relative target path.
+# Used to automate the creation of symbolic links for configuration files and directories.
 $SymlinksMap = @{
     # Example:
     # '.vimrc' = '.config\vim\.vimrc'
@@ -88,6 +122,18 @@ $SymlinksMap = @{
 }
 
 function Create-Symlink {
+    <#
+    .SYNOPSIS
+        Creates a symbolic link from source to target, backing up the target if it exists.
+    .PARAMETER Source
+        The source file or directory (relative or absolute path).
+    .PARAMETER Target
+        The target file or directory (relative or absolute path).
+    .PARAMETER DryRun
+        If specified, logs the actions without executing them.
+    .PARAMETER Override
+        If specified, backs up and replaces the target if it exists.
+    #>
     param(
         [Parameter(Mandatory=$true)][string]$Source,
         [Parameter(Mandatory=$true)][string]$Target,
@@ -138,6 +184,18 @@ function Create-Symlink {
 }
 
 function Setup-Symlinks {
+    <#
+    .SYNOPSIS
+        Iterates through $SymlinksMap and creates symlinks for each entry.
+    .PARAMETER SourceDir
+        The base directory for all source paths.
+    .PARAMETER TargetDir
+        The base directory for all target paths.
+    .PARAMETER DryRun
+        If specified, logs the actions without executing them.
+    .PARAMETER Override
+        If specified, backs up and replaces the target if it exists.
+    #>
     param(
         [Parameter(Mandatory=$true)][string]$SourceDir,
         [Parameter(Mandatory=$true)][string]$TargetDir,
@@ -151,12 +209,18 @@ function Setup-Symlinks {
     }
 }
 
-# Array of PowerShell modules to manage
+# $PwshModules is an array of PowerShell module names to be managed (install, update, uninstall).
 $PwshModules = @(
     'PSFzf'
 )
 
 function Install-Or-Update-PwshModules {
+    <#
+    .SYNOPSIS
+        Installs or updates all PowerShell modules listed in $PwshModules.
+    .PARAMETER DryRun
+        If specified, logs the actions without executing them.
+    #>
     param(
         [switch]$DryRun
     )
@@ -180,6 +244,12 @@ function Install-Or-Update-PwshModules {
 }
 
 function Uninstall-PwshModules {
+    <#
+    .SYNOPSIS
+        Uninstalls all PowerShell modules listed in $PwshModules.
+    .PARAMETER DryRun
+        If specified, logs the actions without executing them.
+    #>
     param(
         [switch]$DryRun
     )
