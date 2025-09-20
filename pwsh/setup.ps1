@@ -267,6 +267,41 @@ function Uninstall-PwshModules {
     }
 }
 
+function Sync-Repo {
+    <#
+    .SYNOPSIS
+        Syncs the current repository with the remote by checking out and pulling the specified branch.
+    .PARAMETER Branch
+        The branch to sync with. Defaults to 'master'.
+    .PARAMETER DryRun
+        If specified, logs the actions without executing them.
+    #>
+    param(
+        [string]$Branch = "master",
+        [switch]$DryRun
+    )
+    $originalLocation = Get-Location
+    $repoLocation = $PSScriptRoot
+    Write-Host "Syncing repository at '$repoLocation' with branch '$Branch'..."
+    if ($DryRun) {
+        Write-Host "[Dry-Run] Would run: Set-Location '$repoLocation'"
+        Write-Host "[Dry-Run] Would run: git fetch --all"
+        Write-Host "[Dry-Run] Would run: git checkout $Branch"
+        Write-Host "[Dry-Run] Would run: git pull origin $Branch"
+        Write-Host "[Dry-Run] Would run: Set-Location '$($originalLocation.Path)'"
+    } else {
+        try {
+            Set-Location $repoLocation
+            git fetch --all
+            git checkout $Branch
+            git pull origin $Branch
+        } finally {
+            Set-Location $originalLocation
+        }
+    }
+}
+
 # Example usage: install or update all apps in the map with dry-run enabled
 # Check-Apps -DryRun
 # Uninstall-Apps -DryRun
+# Sync-Repo -Branch "main" -DryRun
