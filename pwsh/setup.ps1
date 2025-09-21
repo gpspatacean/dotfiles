@@ -212,6 +212,7 @@ function Setup-Symlinks {
 # $PwshModules is an array of PowerShell module names to be managed (install, update, uninstall).
 $PwshModules = @(
     'PSFzf'
+    'DockerCompletion'
 )
 
 function Install-Or-Update-PwshModules {

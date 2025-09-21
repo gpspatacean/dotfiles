@@ -34,6 +34,13 @@ if (Get-Module -ListAvailable -Name PSFzf) {
     Write-Host "PSFzf module is not installed."
 }
 
+#DockerCompletion
+if (Get-Module -ListAvailable -Name DockerCompletion) {
+    Import-Module DockerCompletion
+} else {
+    Write-Host "DockerCompletion module is not installed."
+}
+
 #Notepad++
 if (Test-Path "C:\Program Files\Notepad++\notepad++.exe") {
     Set-Alias -Name npp -Value "C:\Program Files\Notepad++\notepad++.exe"
