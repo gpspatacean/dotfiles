@@ -24,6 +24,9 @@
 | Prefix + c                | New window                 |                                                                                                                                |
 | Prefix + n                | Next window                |                                                                                                                                |
 | Prefix + p                | Previous window            |                                                                                                                                |
+| Prefix + ,                | Rename current window      |                                                                                                                                |
+| Prefix + &                | Close current window       |                                                                                                                                |
+| Prefix + d                | Detach session             |                                                                                                                                |
 | Prefix + Shift + \        | Split vertical             |                                                                                                                                |
 | Prefix + -                | Split horizontal           |                                                                                                                                |
 | Ctrl + h/j/k/l            | Move focus between splits  | <ul><li>vim like movement, needs `christoomey/vim-tmux-navigator`</li><li> Keep Ctrl pressed for continuous movement</li></ul> |
@@ -33,6 +36,8 @@
 | Prefix + w                | Show all sessions expanded | j/k movement; Enter to switch to                                                                                               |
 | Prefix + PgUp             | Enter scroll mode          | <ul><li>PgUp/PgDown/Up/Down movement</li><li> `Alt` + Up/Down movement </li><li> `q` to exit </li></ul>                        |
 | Prefix + r                | Reload configuration       |                                                                                                                                |
+| Prefix + Spacebar         | Cycle through pane layouts |                                                                                                                                |
+| Prefix + :                | Enter command mode         |                                                                                                                                |
 
 ## Readline (Bash/PowerShell)
 | Shortcut          | Action                      | Notes                   |
@@ -75,3 +80,10 @@
 | +           | Next screen mode               |                    |
 | ?           | Show keybinds                  | Contextual actions |
 | /           | Filter in current pane         |                    |
+
+## Yazi
+| Shortcut | Action                             | Notes |
+|----------|------------------------------------|-------|
+| h/j/k/l  | Movement                           |       |
+| z        | zoxide list in fzf picker for `cd` |       |
+| Z        | fzf picker from current directory  |       |
