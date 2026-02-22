@@ -51,10 +51,10 @@ install_or_update_app() {
         fi
         if [[ "$dry_run" == "true" ]]; then
             echo "[Dry-Run] Would run: curl -s https://ohmyposh.dev/install.sh | bash -s -- -d ~/.local/bin"
-            echo "[Dry-Run] Would run: oh-my-posh font install meslo"
+            echo "[Dry-Run] Would run: ~/.local/bin/oh-my-posh font install meslo"
         else
             curl -s https://ohmyposh.dev/install.sh | bash -s -- -d ~/.local/bin
-            oh-my-posh font install meslo
+            ~/.local/bin/oh-my-posh font install meslo
         fi
         return
     fi
@@ -117,7 +117,7 @@ install_or_update_app() {
             unzip yazi-x86_64-unknown-linux-gnu.zip
             chmod +x yazi-x86_64-unknown-linux-gnu/yazi
             mv yazi-x86_64-unknown-linux-gnu/yazi ~/.local/bin
-            rm -rf yazi-x86_64-unknown-linux-gnu
+            rm -rf yazi-x86_64-unknown-linux-gnu yazi-x86_64-unknown-linux-gnu.zip
         fi
         return
     fi
