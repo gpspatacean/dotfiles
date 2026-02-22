@@ -48,7 +48,7 @@ source "$SCRIPT_DIR/setup.sh"
 
 # ─── Sync repository ─────────────────────────────────────────────────────────
 echo "[install.sh] Syncing repository..."
-sync_repo "master" "$DRY_RUN"
+#sync_repo "master" "$DRY_RUN"
 
 # ─── Install / update apps ───────────────────────────────────────────────────
 echo "[install.sh] Installing or updating apps..."
