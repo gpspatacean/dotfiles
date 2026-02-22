@@ -3,5 +3,5 @@ alias ls="eza -al --classify=always --color=always --icons=always --show-symlink
 
 alias lg=lazygit
 alias fd=fdfind
-alias cat="batcat"
+alias cat=batcat
 alias cd=z

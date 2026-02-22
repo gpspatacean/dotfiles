@@ -44,11 +44,7 @@ install_or_update_app() {
 
     # oh-my-posh: always install/update via its own installer script
     if [[ "$cmd" == "oh-my-posh" ]]; then
-        if command -v oh-my-posh &>/dev/null; then
-            echo "'oh-my-posh' found. Attempting to update..."
-        else
-            echo "'oh-my-posh' not found. Installing..."
-        fi
+        echo "Installing/Updating 'oh-my-posh'"
         if [[ "$dry_run" == "true" ]]; then
             echo "[Dry-Run] Would run: curl -s https://ohmyposh.dev/install.sh | bash -s -- -d ~/.local/bin"
             echo "[Dry-Run] Would run: ~/.local/bin/oh-my-posh font install meslo"
@@ -61,13 +57,10 @@ install_or_update_app() {
 
     # fzf: always install/update via its own installer script
     if [[ "$cmd" == "fzf" ]]; then
-        if command -v fzf &>/dev/null; then
-            echo "'fzf' found. Attempting to update..."
-        else
-            echo "'fzf' not found. Installing..."
-        fi
+        echo "Installing/Updating 'fzf'"
         if [[ "$dry_run" == "true" ]]; then
-            echo "[Dry-Run] Would run: wget -c https://github.com/junegunn/fzf/releases/download/v0.68.0/fzf-0.68.0-linux_amd64.tar.gz -O- | tar xz
+            echo "[Dry-Run] Would run:
+            wget -c https://github.com/junegunn/fzf/releases/download/v0.68.0/fzf-0.68.0-linux_amd64.tar.gz -O- | tar xz
             mv fzf ~/.local/bin/
             "
         else
@@ -79,11 +72,7 @@ install_or_update_app() {
 
     # zoxide: always install/update via its own installer script
     if [[ "$cmd" == "zoxide" ]]; then
-        if command -v zoxide &>/dev/null; then
-            echo "'zoxide' found. Attempting to update..."
-        else
-            echo "'zoxide' not found. Installing..."
-        fi
+        echo "Installing/Updating 'zoxide'"
         if [[ "$dry_run" == "true" ]]; then
             echo "[Dry-Run] Would run: curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh"
         else
@@ -94,16 +83,11 @@ install_or_update_app() {
 
     # eza: always install/update via its own installer script
     if [[ "$cmd" == "eza" ]]; then
-        if command -v eza &>/dev/null; then
-            echo "'eza' found. Attempting to update..."
-        else
-            echo "'eza' not found. Installing..."
-        fi
+        echo "Installing/Updating 'eza'"
         if [[ "$dry_run" == "true" ]]; then
             echo "[Dry-Run] Would run:
             wget -c https://github.com/eza-community/eza/releases/latest/download/eza_x86_64-unknown-linux-gnu.tar.gz -O - | tar xz
             chmod +x eza
-            # sudo chown $USER:$USER eza
             mv eza ~/.local/bin
             "
         else
@@ -116,11 +100,7 @@ install_or_update_app() {
 
     # yazi: always install/update via its own installer script
     if [[ "$cmd" == "yazi" ]]; then
-        if command -v eza &>/dev/null; then
-            echo "'yazi' found. Attempting to update..."
-        else
-            echo "'yazi' not found. Installing..."
-        fi
+        echo "Installing/Updating 'yazi'"
         if [[ "$dry_run" == "true" ]]; then
             echo "[Dry-Run] Would run:
             wget -c https://github.com/sxyazi/yazi/releases/download/v26.1.22/yazi-x86_64-unknown-linux-gnu.zip
@@ -141,11 +121,7 @@ install_or_update_app() {
 
     # lazygit: always install/update via its own installer script
     if [[ "$cmd" == "lazygit" ]]; then
-        if command -v lazygit &>/dev/null; then
-            echo "'lazygit' found. Attempting to update..."
-        else
-            echo "'lazygit' not found. Installing..."
-        fi
+        echo "Installing/Updating 'lazygit'"
         if [[ "$dry_run" == "true" ]]; then
             echo "[Dry-Run] Would run:
             wget -c https://github.com/jesseduffield/lazygit/releases/download/v0.59.0/lazygit_0.59.0_linux_x86_64.tar.gz -O- | tar xz --one-top-level=lg
