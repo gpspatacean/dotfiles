@@ -98,6 +98,11 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
+#Add ${HOME}/.local/bin to PATH if not already
+if [[ ! "$PATH" == *${HOME}/.local/bin* ]]; then
+    PATH="${PATH:+${PATH}:}/${HOME}/.local/bin"
+fi
+
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
@@ -126,4 +131,3 @@ export FZF_ALT_C_OPTS="--preview 'eza -alT --classify=always --color=always --ic
 if [ -f ~/.bash_customizations ]; then
     . ~/.bash_customizations
 fi
-
