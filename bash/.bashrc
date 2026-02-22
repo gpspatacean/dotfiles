@@ -116,11 +116,23 @@ fi
 
 export XDG_CONFIG_HOME="$HOME/.config/"
 
-eval "$(oh-my-posh init bash --config $XDG_CONFIG_HOME/customized_atomic.omp.json)"
-eval "$(fzf --bash)"
-eval "$(zoxide init bash)"
+if command -v oh-my-posh &>/dev/null; then
+    eval "$(oh-my-posh init bash --config $XDG_CONFIG_HOME/customized_atomic.omp.json)"
+else
+    echo "'oh-my-posh' not available"
+fi
 
-#[ -f "${XDG_CONFIG_HOME:-$HOME/.config}"/fzf/fzf.bash ] && source "${XDG_CONFIG_HOME:-$HOME/.config}"/fzf/fzf.bash
+if command -v fzf &>/dev/null; then
+    eval "$(fzf --bash)"
+else
+    echo "'fzf' not available"
+fi
+
+if command -v zoxide &>/dev/null; then
+    eval "$(zoxide init bash)"
+else
+    echo "'zoxide' not available"
+fi
 
 export BAT_CONFIG_PATH="$XDG_CONFIG_HOME/bat/config"
 export RIPGREP_CONFIG_PATH="$XDG_CONFIG_HOME/rg/config" #'rg' config file path
