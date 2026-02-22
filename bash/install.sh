@@ -50,6 +50,10 @@ source "$SCRIPT_DIR/setup.sh"
 echo "[install.sh] Syncing repository..."
 #sync_repo "master" "$DRY_RUN"
 
+# ─── Install prereq apps ─────────────────────────────────────────────────────
+echo "[install.sh] Installing prerequisite apps"
+check_prereqs "$DRY_RUN"
+
 # ─── Install / update apps ───────────────────────────────────────────────────
 echo "[install.sh] Installing or updating apps..."
 check_apps "$DRY_RUN"

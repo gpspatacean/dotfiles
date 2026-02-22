@@ -224,6 +224,15 @@ uninstall_app() {
 }
 
 # ─── Batch operations ─────────────────────────────────────────────────────────
+check_prereqs() {
+    local dry_run="${1:-false}"
+    if [[ "$dry_run" == "true" ]]; then
+        echo "[Dry-Run] Would run: sudo apt install -y curl wget unzip"
+    else
+        sudo apt install -y curl wget unzip
+    fi
+}
+
 check_apps() {
     local dry_run="${1:-false}"
     for cmd in "${!APP_MAP[@]}"; do
