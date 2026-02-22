@@ -15,7 +15,7 @@ declare -A APP_MAP=(
     ["bat"]="bat"
     ["yazi"]="-"
     ["rg"]="ripgrep"
-    ["lazygit"]="lazygit"
+    ["lazygit"]="-"
 )
 
 # ─── Symlinks Map ─────────────────────────────────────────────────────────────
@@ -118,6 +118,27 @@ install_or_update_app() {
             chmod +x yazi-x86_64-unknown-linux-gnu/yazi
             mv yazi-x86_64-unknown-linux-gnu/yazi ~/.local/bin
             rm -rf yazi-x86_64-unknown-linux-gnu
+        fi
+        return
+    fi
+
+    # lazygit: always install/update via its own installer script
+    if [[ "$cmd" == "lazygit" ]]; then
+        if command -v lazygit &>/dev/null; then
+            echo "'lazygit' found. Attempting to update..."
+        else
+            echo "'lazygit' not found. Installing..."
+        fi
+        if [[ "$dry_run" == "true" ]]; then
+            echo "[Dry-Run] Would run:
+            wget -c https://github.com/jesseduffield/lazygit/releases/download/v0.59.0/lazygit_0.59.0_linux_x86_64.tar.gz -O- | tar xz --one-top-level=lg
+            mv lg/lazygit ~/.local/bin
+            rm -rf lg
+            "
+        else
+            wget -c https://github.com/jesseduffield/lazygit/releases/download/v0.59.0/lazygit_0.59.0_linux_x86_64.tar.gz -O- | tar xz --one-top-level=lg
+            mv lg/lazygit ~/.local/bin
+            rm -rf lg
         fi
         return
     fi
