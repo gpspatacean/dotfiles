@@ -9,7 +9,7 @@ set -euo pipefail
 # Use "-" if the package requires a custom install (e.g. oh-my-posh).
 declare -A APP_MAP=(
     ["oh-my-posh"]="-"
-    ["fzf"]="fzf"
+    ["fzf"]="-"
     ["zoxide"]="-"
     ["eza"]="-"
     ["bat"]="bat"
@@ -59,6 +59,24 @@ install_or_update_app() {
         return
     fi
 
+    # fzf: always install/update via its own installer script
+    if [[ "$cmd" == "fzf" ]]; then
+        if command -v fzf &>/dev/null; then
+            echo "'fzf' found. Attempting to update..."
+        else
+            echo "'fzf' not found. Installing..."
+        fi
+        if [[ "$dry_run" == "true" ]]; then
+            echo "[Dry-Run] Would run: wget -c https://github.com/junegunn/fzf/releases/download/v0.68.0/fzf-0.68.0-linux_amd64.tar.gz -O- | tar xz
+            mv fzf ~/.local/bin/
+            "
+        else
+            wget -c https://github.com/junegunn/fzf/releases/download/v0.68.0/fzf-0.68.0-linux_amd64.tar.gz -O- | tar xz
+            mv fzf ~/.local/bin/
+        fi
+        return
+    fi
+
     # zoxide: always install/update via its own installer script
     if [[ "$cmd" == "zoxide" ]]; then
         if command -v zoxide &>/dev/null; then
@@ -91,7 +109,6 @@ install_or_update_app() {
         else
             wget -c https://github.com/eza-community/eza/releases/latest/download/eza_x86_64-unknown-linux-gnu.tar.gz -O - | tar xz
             chmod +x eza
-            # sudo chown $USER:$USER eza
             mv eza ~/.local/bin
         fi
         return

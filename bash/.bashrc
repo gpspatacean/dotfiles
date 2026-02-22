@@ -117,8 +117,10 @@ fi
 export XDG_CONFIG_HOME="$HOME/.config/"
 
 eval "$(oh-my-posh init bash --config $XDG_CONFIG_HOME/customized_atomic.omp.json)"
+eval "$(fzf --bash)"
+eval "$(zoxide init bash)"
 
-[ -f "${XDG_CONFIG_HOME:-$HOME/.config}"/fzf/fzf.bash ] && source "${XDG_CONFIG_HOME:-$HOME/.config}"/fzf/fzf.bash
+#[ -f "${XDG_CONFIG_HOME:-$HOME/.config}"/fzf/fzf.bash ] && source "${XDG_CONFIG_HOME:-$HOME/.config}"/fzf/fzf.bash
 
 export BAT_CONFIG_PATH="$XDG_CONFIG_HOME/bat/config"
 export RIPGREP_CONFIG_PATH="$XDG_CONFIG_HOME/rg/config" #'rg' config file path
