@@ -8,8 +8,8 @@
 | Ctrl + Shift + p                 | Command Palette          |                            |
 | Ctrl + Shift + t                 | New tab                  | New tab with profile 1     |
 | Ctrl + Shift + w                 | Close current tab        |                            |
-| Alt + Shift + -                  | Duplicate pane           | Split down                 |
-| Alt + Shift + \                  | Duplicate pane           | Split right                |
+| Ctrl + Alt + -                   | Duplicate pane           | Split down                 |
+| Ctrl + Alt + \                   | Duplicate pane           | Split right                |
 | Alt + Left/Right/Up/Down         | Move focus between panes | Maybe delete               |
 | Ctrl + Alt + h/j/k/l             | Move focus between panes |                            |
 | Alt + Shift + Left/Right/Up/Down | Resize                   | To check against tmux/nvim |
