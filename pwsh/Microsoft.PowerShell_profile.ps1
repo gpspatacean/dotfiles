@@ -145,6 +145,10 @@ Set-PSReadLineKeyHandler -chord Alt+Ctrl+h -function BackwardWord # Go to the be
 Set-PSReadLineKeyHandler -chord Alt+Ctrl+k -function ForwardChar # Go Forward one character
 Set-PSReadLineKeyHandler -chord Alt+Ctrl+l -function ForwardWord # Go to the end of the current word, or the next word
 
+# Disable Ctrl+J/K so when trying to move outside of split boundaries, it does not interfere
+Set-PSReadLineKeyHandler -chord Ctrl+j -ScriptBlock { }
+Set-PSReadLineKeyHandler -chord Ctrl+k -ScriptBlock { }
+
 #Other setups
 Set-PSReadLineKeyHandler -Key Tab -Function Complete
 Set-PSReadLineOption -BellStyle None

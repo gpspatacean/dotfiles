@@ -1,10 +1,10 @@
 {
     "$help": "https://aka.ms/terminal-documentation",
     "$schema": "https://aka.ms/terminal-profiles-schema",
-    "actions": 
+    "actions":
     [
         {
-            "command": 
+            "command":
             {
                 "action": "moveFocus",
                 "direction": "down"
@@ -12,15 +12,7 @@
             "id": "Terminal.MoveFocusDown"
         },
         {
-            "command": 
-            {
-                "action": "copy",
-                "singleLine": false
-            },
-            "id": "User.copy.644BA8F2"
-        },
-        {
-            "command": 
+            "command":
             {
                 "action": "moveFocus",
                 "direction": "left"
@@ -28,11 +20,7 @@
             "id": "Terminal.MoveFocusLeft"
         },
         {
-            "command": "paste",
-            "id": "User.paste"
-        },
-        {
-            "command": 
+            "command":
             {
                 "action": "moveFocus",
                 "direction": "up"
@@ -40,28 +28,7 @@
             "id": "Terminal.MoveFocusUp"
         },
         {
-            "command": "find",
-            "id": "User.find"
-        },
-        {
-            "command": 
-            {
-                "action": "splitPane",
-                "split": "right"
-            },
-            "id": "Terminal.SplitPaneRight"
-        },
-        {
-            "command": 
-            {
-                "action": "splitPane",
-                "split": "auto",
-                "splitMode": "duplicate"
-            },
-            "id": "User.splitPane.A6751878"
-        },
-        {
-            "command": 
+            "command":
             {
                 "action": "moveFocus",
                 "direction": "right"
@@ -69,101 +36,125 @@
             "id": "Terminal.MoveFocusRight"
         },
         {
-            "command": 
+            "command":
+            {
+                "action": "splitPane",
+                "split": "right"
+            },
+            "id": "Terminal.SplitPaneRight"
+        },
+        {
+            "command":
             {
                 "action": "splitPane",
                 "split": "down"
             },
             "id": "Terminal.SplitPaneDown"
+        },
+        {
+            "command":
+            {
+                "action": "copy",
+                "singleLine": false
+            },
+            "id": "User.copy.644BA8F2"
+        },
+        {
+            "command": "paste",
+            "id": "User.paste"
+        },
+        {
+            "command": "find",
+            "id": "User.find"
         }
     ],
     "copyFormatting": "none",
     "copyOnSelect": false,
     "defaultProfile": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
     "firstWindowPreference": "persistedWindowLayout",
-    "keybindings": 
+    "keybindings":
     [
         {
-            "id": null,
-            "keys": "ctrl+shift+tab"
+            "id": "Terminal.NextTab",
+            "keys": "ctrl+alt+n"
+        },
+        {
+            "id": "Terminal.PrevTab",
+            "keys": "ctrl+alt+p"
+        },
+        {
+            "id": "Terminal.MoveFocusDown",
+            "keys": "ctrl+alt+j"
+        },
+        {
+            "id": "Terminal.MoveFocusLeft",
+            "keys": "ctrl+alt+h"
+        },
+        {
+            "id": "Terminal.MoveFocusRight",
+            "keys": "ctrl+alt+l"
+        },
+        {
+            "id": "Terminal.MoveFocusUp",
+            "keys": "ctrl+alt+k"
+        },
+        {
+            "id": "Terminal.SplitPaneDown",
+            "keys": "ctrl+alt+-"
+        },
+        {
+            "id": "Terminal.SplitPaneRight",
+            "keys": "ctrl+alt+\\"
         },
         {
             "id": "User.copy.644BA8F2",
             "keys": "ctrl+c"
         },
         {
-            "id": "Terminal.MoveFocusLeft",
-            "keys": "ctrl+h"
-        },
-        {
-            "id": "User.find",
-            "keys": "ctrl+shift+f"
+            "id": null,
+            "keys": "ctrl+shift+tab"
         },
         {
             "id": "User.paste",
             "keys": "ctrl+v"
         },
         {
-            "id": "User.splitPane.A6751878",
-            "keys": "alt+shift+d"
-        },
-        {
-            "id": "Terminal.SplitPaneDown",
-            "keys": "ctrl+minus"
-        },
-        {
-            "id": "Terminal.MoveFocusDown",
-            "keys": "ctrl+j"
-        },
-        {
-            "id": "Terminal.MoveFocusUp",
-            "keys": "ctrl+k"
-        },
-        {
-            "id": "Terminal.MoveFocusRight",
-            "keys": "ctrl+l"
-        },
-        {
-            "id": "Terminal.SplitPaneRight",
-            "keys": "ctrl+shift+\\"
-        },
-        {
-            "id": "Terminal.NextTab",
-            "keys": "ctrl+alt+n"
+            "id": "User.find",
+            "keys": "ctrl+shift+f"
         },
         {
             "id": null,
             "keys": "ctrl+tab"
         },
         {
-            "id": "Terminal.PrevTab",
-            "keys": "ctrl+alt+p"
+            "id": null,
+            "keys": "alt+shift+plus"
         }
     ],
-    "newTabMenu": 
+    "newTabMenu":
     [
         {
             "type": "remainingProfiles"
         }
     ],
     "newTabPosition": "afterCurrentTab",
-    "profiles": 
+    "profiles":
     {
-        "defaults": 
+        "defaults":
         {
             "colorScheme": "One Half Dark",
-            "font": 
+            "font":
             {
                 "face": "MesloLGL Nerd Font",
-                "size": 10
+                "size": 9
             }
         },
-        "list": 
+        "list":
         [
             {
                 "colorScheme": "One Half Dark",
                 "commandline": "%SystemRoot%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
-                "font": 
+                "font":
                 {
                     "face": "MesloLGL Nerd Font"
                 },
@@ -227,6 +218,12 @@
                 "hidden": false,
                 "name": "Ubuntu 24.04.1 LTS",
                 "source": "CanonicalGroupLimited.Ubuntu24.04LTS_79rhkp1fndgsc"
+            },
+            {
+                "guid": "{17bf3de4-5353-5709-bcf9-835bd952a95e}",
+                "hidden": true,
+                "name": "Ubuntu-22.04",
+                "source": "Windows.Terminal.Wsl"
             }
         ]
     },
