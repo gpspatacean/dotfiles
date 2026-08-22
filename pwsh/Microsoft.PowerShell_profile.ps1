@@ -26,6 +26,28 @@ else
 	Write-Host "Zoxide is not installed."
 }
 
+Register-ArgumentCompleter -Native -CommandName ssh -ScriptBlock {
+	param($wordToComplete, $commandAst, $cursorPosition)
+
+	$config = Join-Path $HOME '.ssh\config'
+
+	if (Test-Path $config) {
+		Get-Content $config |
+			Where-Object { $_ -match '^Host\s+' } |
+			ForEach-Object {
+				($_ -replace '^Host\s+', '') -split '\s+'
+			} |
+			Where-Object {
+				$_ -and $_ -notmatch '[*?]' -and $_ -like "$wordToComplete*"
+			} |
+			ForEach-Object {
+				[System.Management.Automation.CompletionResult]::new(
+					$_, $_, 'ParameterValue', $_
+				)
+			}
+	}
+}
+
 #Fzf (Import the fuzzy finder and set a shortcut key to begin searching)
 if (Get-Module -ListAvailable -Name PSFzf) {
     Import-Module PSFzf
