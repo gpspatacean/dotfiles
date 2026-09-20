@@ -63,6 +63,11 @@ if (Get-Module -ListAvailable -Name DockerCompletion) {
     Write-Host "DockerCompletion module is not installed."
 }
 
+#Kubernetes autocomplete
+if (Get-Command kubectl -ErrorAction SilentlyContinue) {
+    kubectl completion powershell | Out-String | Invoke-Expression
+}
+
 #Notepad++
 if (Test-Path "C:\Program Files\Notepad++\notepad++.exe") {
     Set-Alias -Name npp -Value "C:\Program Files\Notepad++\notepad++.exe"
