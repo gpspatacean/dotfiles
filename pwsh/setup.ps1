@@ -119,6 +119,7 @@ $SymlinksMap = @{
     ".config\rg" = ".config\rg"
     ".config\yazi" = ".config\yazi"
     "pwsh\Microsoft.PowerShell_profile.ps1" = "Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1"
+    "pwsh\Microsoft.PowerShell_profile.ps1" = "Documents\PowerShell\Microsoft.PowerShell_profile.ps1"
 }
 
 function Create-Symlink {
