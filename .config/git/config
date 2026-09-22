@@ -4,6 +4,8 @@
 	username = gpspatacean
 [log]
 	abbrevCommit = true
+[merge]
+    conflictStyle = diff3
 [status]
 	short = true
 	branch = true
@@ -12,6 +14,8 @@
 	pretty = format:%C(yellow)%h%Creset %C(white)%an%Creset %C(green)%ad%Creset %C(red)%d%Creset \t%C(cyan)%s
 [alias]
 	lg = log --all --decorate --oneline --graph --pretty=format:'%C(yellow)%h%Creset %C(white)%an%Creset %C(green)%ad%Creset %C(red)%d%Creset \t%C(cyan)%s'
+[pull]
+    ff = only
 [push]
 	autoSetupRemote = true
 
